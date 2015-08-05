@@ -43,7 +43,9 @@ class HandlebarsTemplate extends Template
 
     public function render($data)
     {
-        $engine = Handlebars::instance();
+        $engine = Handlebars::instance(array(
+            'extensions' => $this->extensions,
+        ));
 
         return $engine->render($this->template, $data);
     }
